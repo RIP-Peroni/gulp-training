@@ -1,8 +1,13 @@
-const { src, dest } = require('gulp');
+const { watch } = require('gulp');
 
-const copyScss = () => {
-    return src('src/**/*.scss', '!src/project/**')
-        .pipe(dest('build/styles'));
+const changeAppStylesFile = (done) => {
+    console.log('Ой, файл app.scss изменился');
+
+    done();
 };
 
-exports.default = copyScss;
+const watchers = () => {
+    watch('src/sass/app.scss', changeAppStylesFile);
+};
+
+exports.watchers = watchers;
