@@ -1,8 +1,8 @@
-const { src, dest } = require('gulp');
+const { src, dest, parallel } = require('gulp');
 
-const copyFile = () => {
-    return src('src/sass/app.scss')
+const copyScss = () => {
+    return src('src/sass/*.scss')
         .pipe(dest('build/styles'));
 };
 
-exports.default = copyFile;
+exports.default = copyScss;
