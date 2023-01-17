@@ -5,6 +5,8 @@
   },
   "devDependencies": {
     "browser-sync": "^2.27.11",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
     "gulp-pug": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "sass": "^1.57.1"

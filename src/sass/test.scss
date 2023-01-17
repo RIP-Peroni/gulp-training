@@ -1,0 +1,8 @@
+.widget {
+  .requirements {
+    background-image: image('src/bg.png');
+  }
+  &:checked {
+    position: relative;
+  }
+}
