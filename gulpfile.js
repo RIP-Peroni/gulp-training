@@ -1,18 +1,8 @@
-const { parallel, series } = require('gulp');
+const { src, dest } = require('gulp');
 
-const sassCompile = (done) => {
-    console.log('Compile SASS to CSS');
-    done();
+const copyFile = () => {
+    return src('src/sass/app.scss')
+        .pipe(dest('build/styles'));
 };
 
-const pugCompile = (done) => {
-    console.log('Compile Pug to HTML');
-    done();
-};
-
-const imagesOptimize = (done) => {
-    console.log('Optimize Images');
-    done();
-}
-
-exports.default = series(sassCompile, pugCompile, imagesOptimize);
+exports.default = copyFile;
