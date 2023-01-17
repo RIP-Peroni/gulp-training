@@ -1,14 +1,12 @@
 const { src, dest, watch } = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
 
-const copyCSS = () => {
-    return src('project/**/*.css')
-        .pipe(dest('server/dist'));
+const buildSass = () => {
+    console.log('Компиляция SASS');
+
+    return src('src/sass/*.scss')
+        .pipe(sass())
+        .pipe(dest('build/styles/'));
 };
 
-const watchers = () => {
-    watch('project', copyCSS);
-};
-
-exports.watchers = watchers;
-exports.copyCSS = copyCSS;
-exports.default = copyCSS;
+exports.build = buildSass;
